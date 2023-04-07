@@ -2,18 +2,16 @@ body{
     margin: 0;
 }
 .main-container{
-    border: 1px solid;
-    width: 50%;
-    height: 20em;
+    width: 40%;
+    height: 18em;
     margin: 10em auto;
+    box-shadow: 0 0 4px 1px;
 }
 
 /* Question contents */
 .quiz-container h2{
     text-align: center;
-}
-h2{
-    text-align: center;
+    font-size: 1.3rem;
 }
 .quiz-container{
     width: 100%;
@@ -38,7 +36,7 @@ ul{
     border: none;
     border-radius: 10px;
     padding: 5px;
-    width: 30%;
+    width: 40%;
     background-color: lightseagreen;
     color: white;
     font-size: 1.2rem;

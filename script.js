@@ -29,7 +29,7 @@ const quizAndAnswers = [
         B: "Print line",
         C: "Hello world",
         D: "Hello",
-        correctAns: "D"
+        correctAns: "C"
     },
     {
         question: "Which one is the scripting language for web development",
@@ -37,11 +37,15 @@ const quizAndAnswers = [
         B: "Javascript",
         C: "CSS",
         D: "Python",
-        correctAns: "C"
+        correctAns: "B"
     }
 ];
 
-const container = document.querySelector(".main-container")
+const container = document.querySelector(".main-container");
+const quizContainer = document.querySelector(".quiz-container");
+const buttonContainer = document.querySelector(".submit-btn-container");
+
+
 const question = document.getElementById("quizes");
 const ansA = document.getElementById("a");
 const ansB = document.getElementById("b");
@@ -49,6 +53,7 @@ const ansC = document.getElementById("c");
 const ansD = document.getElementById("d");
 const submitButton = document.getElementById("btn");
 const answers = document.querySelectorAll(".answers");
+const refreshBtn = document.querySelector(".refresh-btn");
 
 let currentQuestion = 0;
 let results = 0;
@@ -84,15 +89,15 @@ submitButton.addEventListener("click", ()=>{
     const ans = selectedOne();
 
     if(ans){
-        if(ans === quizAndAnswers[currentQuestion].correctAns){          
-            // results++;
-            console.log(results++)
+        if(ans === quizAndAnswers[currentQuestion].correctAns){         
+            results++;
         };
         currentQuestion++;
         if(currentQuestion < quizAndAnswers.length){
             loadQuizes();
         }else{
-            container.innerHTML = `<h2>You scored ${results} out of 5<h2/>`
+            quizContainer.innerHTML = `<h2>You scored ${results} out of 5<h2/>`;
+            buttonContainer.innerHTML = `<button onclick="location.reload()">Refresh</button>`
         } 
     }
     
