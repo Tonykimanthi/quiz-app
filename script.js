@@ -98,8 +98,7 @@ submitButton.addEventListener("click", ()=>{
         }else{
             quizContainer.innerHTML = `<h2>You scored ${results} out of 5<h2/>`;
             buttonContainer.innerHTML = `<button onclick="location.reload()">Refresh</button>`
-        } 
+         } 
     }
-    
 });
 

@@ -1,11 +1,14 @@
 body{
     margin: 0;
+    background-color: rgba(32, 178, 171, 0.083);
 }
 .main-container{
+    border-radius: 10px;
     width: 40%;
-    height: 18em;
+    height: 20em;
+    padding: .5em 1em;
     margin: 10em auto;
-    box-shadow: 0 0 4px 1px;
+    background-color: white;
 }
 
 /* Question contents */
@@ -23,6 +26,9 @@ ul{
     list-style-type: none;
     padding: 0;
 }
+ul input, label{
+    cursor: pointer;
+}
 
 
 /* Submit button/next */
@@ -35,7 +41,7 @@ ul{
 #btn{
     border: none;
     border-radius: 10px;
-    padding: 5px;
+    padding: .6em 0em;
     width: 40%;
     background-color: lightseagreen;
     color: white;
