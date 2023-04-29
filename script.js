@@ -43,7 +43,6 @@ const quizAndAnswers = [
 
 const container = document.querySelector(".main-container");
 const quizContainer = document.querySelector(".quiz-container");
-const buttonContainer = document.querySelector(".submit-btn-container");
 
 
 const question = document.getElementById("quizes");
@@ -53,7 +52,6 @@ const ansC = document.getElementById("c");
 const ansD = document.getElementById("d");
 const submitButton = document.getElementById("btn");
 const answers = document.querySelectorAll(".answers");
-const refreshBtn = document.querySelector(".refresh-btn");
 
 let currentQuestion = 0;
 let results = 0;
@@ -96,8 +94,14 @@ submitButton.addEventListener("click", ()=>{
         if(currentQuestion < quizAndAnswers.length){
             loadQuizes();
         }else{
+            let refreshBtn = document.getElementById("refresh-btn");
+            refreshBtn.classList.add("displayBtn");
+            refreshBtn.addEventListener("click", function(){
+                location.reload();
+            })
+
+            submitButton.classList.add("removeSubmitBtn");
             quizContainer.innerHTML = `<h2>You scored ${results} out of 5<h2/>`;
-            buttonContainer.innerHTML = `<button onclick="location.reload()">Refresh</button>`
          } 
     }
 });

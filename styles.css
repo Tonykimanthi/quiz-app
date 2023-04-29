@@ -54,3 +54,30 @@ ul input, label{
 #btn:active{
     background-color: rgb(22, 144, 138);
 }
+.removeSubmitBtn{
+    display: none;
+}
+
+
+/* Refresh button */
+.refresh-btn{
+    border: none;
+    border-radius: 10px;
+    width: 30%;
+    margin: auto;
+    padding: .5em 0;
+    font-size: 1.1rem;
+    color: wheat;
+    background-color: rgb(7, 224, 224);
+    cursor: pointer;
+    display: none;
+}
+.refresh-btn:hover{
+    background-color: rgb(4, 204, 204);
+}
+.refresh-btn:active{
+    background-color: rgb(3, 182, 182);
+}
+.displayBtn{
+    display: block;
+}
