@@ -1,40 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz App</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
 </head>
+
 <body>
     <div class="main-container">
-            <div class="quiz-container">
-                <h2 id="quizes">Quizes</h2>
+        <div class="quiz-container">
+            <h2 id="quizes">Quizes</h2>
 
-                <ul>
-                    <li>
-                        <input type="radio" name="answer" id="A" class="answers">
-                        <label for="A" id="a">Quiz</label>
-                    <li>
-                        <input type="radio" name="answer" id="B" class="answers">
-                        <label for="B" id="b">Quiz</label>
-                    </li>
-                    <li>
-                        <input type="radio" name="answer" id="C" class="answers">
-                        <label for="C" id="c">Quiz</label>
-                    </li>
-                    <li>
-                        <input type="radio" name="answer" id="D" class="answers">
-                        <label for="D" id="d">Quiz</label>
-                    </li>
-                </ul>
-            </div>
-            <div class="submit-btn-container">
-            <button id="btn" class="">Next</button>
-            </div>
-            <button id="refresh-btn" class="refresh-btn">Refresh</button>
+            <ul>
+                <li>
+                    <input type="radio" name="answer" id="A" class="answers" />
+                    <label for="A" id="a">Quiz</label>
+                </li>
+
+                <li>
+                    <input type="radio" name="answer" id="B" class="answers" />
+                    <label for="B" id="b">Quiz</label>
+                </li>
+                <li>
+                    <input type="radio" name="answer" id="C" class="answers" />
+                    <label for="C" id="c">Quiz</label>
+                </li>
+                <li>
+                    <input type="radio" name="answer" id="D" class="answers" />
+                    <label for="D" id="d">Quiz</label>
+                </li>
+            </ul>
         </div>
+        <div class="submit-btn-container">
+            <button id="btn" class="">Next</button>
+        </div>
+    </div>
+
+    <div class="score-container">
+        <p>Congrats!</p>
+        <p id="scoreMsg">0 score</p>
+        <button id="refresh-btn" class="refresh-btn">Refresh</button>
+    </div>
 </body>
+
 </html>

@@ -1,83 +1,139 @@
-body{
+body {
     margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: rgba(32, 178, 171, 0.083);
+    background-image: url(https://media.istockphoto.com/id/1305169776/photo/q-and-a-concept-yellow-question-mark-glowing-amid-black-question-marks-on-black-background.jpg?b=1&s=170667a&w=0&k=20&c=S9qLeT1eGgbyjZ9T01mQnPf4TknDEXAUyDgUMXK_3bg=);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-.main-container{
+
+.main-container {
     border-radius: 10px;
     width: 40%;
     height: 20em;
-    padding: .5em 1em;
-    margin: 10em auto;
+    padding: 0.5em 1em;
     background-color: white;
 }
+.remove-container {
+    display: none;
+}
+
 
 /* Question contents */
-.quiz-container h2{
+.quiz-container h2 {
     text-align: center;
     font-size: 1.3rem;
 }
-.quiz-container{
+
+.quiz-container {
     width: 100%;
 }
-.quiz-container input{
+
+.quiz-container input {
     margin: 15px 10px;
 }
-ul{
+
+ul {
     list-style-type: none;
     padding: 0;
 }
-ul input, label{
+
+ul input,
+label {
     cursor: pointer;
 }
 
-
 /* Submit button/next */
-.submit-btn-container{
+.submit-btn-container {
     display: flex;
     justify-content: center;
     width: 100%;
-    margin: auto
+    margin: auto;
 }
-#btn{
+
+#btn {
     border: none;
     border-radius: 10px;
-    padding: .6em 0em;
+    padding: 0.6em 0em;
     width: 40%;
-    background-color: lightseagreen;
+    background-color: #18dcff;
     color: white;
     font-size: 1.2rem;
     cursor: pointer;
 }
-#btn:hover{
-    background-color: rgb(29, 165, 158);
+
+#btn:hover {
+    background-color: #0bcef1;
 }
-#btn:active{
-    background-color: rgb(22, 144, 138);
-}
-.removeSubmitBtn{
-    display: none;
+
+#btn:active {
+    background-color: #0cc2e2;
 }
 
 
 /* Refresh button */
-.refresh-btn{
+.score-container{
+    border: 1px solid wheat;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 20em;
+    width: 30%;
+    padding: 1em;
+    position: absolute;
+    top: -10em;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: white;
+}
+.pop-score-container{
+   top: 10em;
+   animation-name: displayScore;
+   animation-duration: .3s;
+   animation-timing-function: ease-in-out;
+}
+@keyframes displayScore{
+    0%{
+        top: -10em;
+    }
+    100%{
+        top: 10em;
+    }
+}
+
+.score-container p:first-child{
+    font-size: 1.4rem;
+    margin: 0;
+}
+.score-container p:nth-child(2){
+    color: #3ae374;
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin: .5em 0;
+}
+.refresh-btn {
     border: none;
     border-radius: 10px;
     width: 30%;
-    margin: auto;
-    padding: .5em 0;
+    /* margin: auto; */
+    padding: 0.5em 0;
     font-size: 1.1rem;
-    color: wheat;
-    background-color: rgb(7, 224, 224);
+    color: white;
+    background-color: #ff9f1a;
     cursor: pointer;
-    display: none;
+    /* display: none; */
 }
-.refresh-btn:hover{
-    background-color: rgb(4, 204, 204);
+
+.refresh-btn:hover {
+    background-color: #f09413;
 }
-.refresh-btn:active{
-    background-color: rgb(3, 182, 182);
-}
-.displayBtn{
-    display: block;
+
+.refresh-btn:active {
+    background-color: #df890f;
 }

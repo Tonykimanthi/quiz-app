@@ -5,7 +5,7 @@ const quizAndAnswers = [
         B: "53",
         C: "63",
         D: "47",
-        correctAns: "B"
+        correctAns: "B",
     },
     {
         question: "Which one of these is wrong",
@@ -13,7 +13,7 @@ const quizAndAnswers = [
         B: "Javascript is for web development",
         C: "Java is a styling language",
         D: "Python is used for web development",
-        correctAns: "C"
+        correctAns: "C",
     },
     {
         question: "What is the most popular programming problem?",
@@ -21,7 +21,7 @@ const quizAndAnswers = [
         B: "Missing a Semicolon",
         C: "Missing a colon",
         D: "Missing a fullstop",
-        correctAns: "B"
+        correctAns: "B",
     },
     {
         question: "What two words every programmer learned to code first?",
@@ -29,7 +29,7 @@ const quizAndAnswers = [
         B: "Print line",
         C: "Hello world",
         D: "Hello",
-        correctAns: "C"
+        correctAns: "C",
     },
     {
         question: "Which one is the scripting language for web development",
@@ -37,13 +37,13 @@ const quizAndAnswers = [
         B: "Javascript",
         C: "CSS",
         D: "Python",
-        correctAns: "B"
-    }
+        correctAns: "B",
+    },
 ];
 
-const container = document.querySelector(".main-container");
+const mainContainer = document.querySelector(".main-container");
 const quizContainer = document.querySelector(".quiz-container");
-
+const scoreContainer = document.querySelector(".score-container");
 
 const question = document.getElementById("quizes");
 const ansA = document.getElementById("a");
@@ -56,8 +56,8 @@ const answers = document.querySelectorAll(".answers");
 let currentQuestion = 0;
 let results = 0;
 
-loadQuizes()
-function loadQuizes(){
+loadQuizes();
+function loadQuizes() {
     deselectPreviousAns();
     const currQuiz = quizAndAnswers[currentQuestion];
     question.innerText = currQuiz.question;
@@ -67,42 +67,41 @@ function loadQuizes(){
     ansC.innerText = currQuiz.C;
     ansD.innerText = currQuiz.D;
 }
-function selectedOne(){
+function selectedOne() {
     let ans;
-    answers.forEach(answer => {     
-        if(answer.checked){
+    answers.forEach((answer) => {
+        if (answer.checked) {
             ans = answer.id;
         }
     });
     return ans;
 }
 
-function deselectPreviousAns(){
-    answers.forEach(answer => {
-        answer.checked = false
+function deselectPreviousAns() {
+    answers.forEach((answer) => {
+        answer.checked = false;
     });
 }
 
-submitButton.addEventListener("click", ()=>{
+submitButton.addEventListener("click", () => {
     const ans = selectedOne();
 
-    if(ans){
-        if(ans === quizAndAnswers[currentQuestion].correctAns){         
+    if (ans) {
+        if (ans === quizAndAnswers[currentQuestion].correctAns) {
             results++;
-        };
+        }
         currentQuestion++;
-        if(currentQuestion < quizAndAnswers.length){
+        if (currentQuestion < quizAndAnswers.length) {
             loadQuizes();
-        }else{
+        } else {
+            let scoreMsg = document.getElementById("scoreMsg");
             let refreshBtn = document.getElementById("refresh-btn");
-            refreshBtn.classList.add("displayBtn");
-            refreshBtn.addEventListener("click", function(){
-                location.reload();
-            })
-
-            submitButton.classList.add("removeSubmitBtn");
-            quizContainer.innerHTML = `<h2>You scored ${results} out of 5<h2/>`;
-         } 
+            mainContainer.classList.add("remove-container");
+            scoreContainer.classList.add("pop-score-container")
+            // refreshBtn.classList.add("displayBtn");
+            refreshBtn.addEventListener("click", () => location.reload());
+            // submitButton.classList.add("removeSubmitBtn");
+            scoreMsg.innerHTML = ` ${results/quizAndAnswers.length * 100}% score`;
+        }
     }
 });
-
